@@ -44,7 +44,7 @@ const Add = (props) => {
     const handleNewFighterForm = (event) => {
         event.preventDefault()
         axios.post(
-            'http://localhost:3000/fighter',
+            'https://fighterbackend.herokuapp.com/fighter',
             {
                 name: newName,
                 nickname: newNickname,
@@ -56,7 +56,7 @@ const Add = (props) => {
             }
         ).then(() => {
             axios   
-                .get('http://localhost:3000/fighter')
+                .get('https://fighterbackend.herokuapp.com/fighter')
                 .then((response) => {
                     props.setFilteredResults(response.data)
                 })
@@ -84,13 +84,13 @@ const Add = (props) => {
                     Weightclass: <input type="text" className="form-control" onChange={handleNewWeightclass} />
                     </div>
                     <div className='form-input'>
-                    Record: <input type="text" className="form-range" onChange={handleNewRecord} />
+                    Record: <input type="text" className="form-control" onChange={handleNewRecord} />
                     </div>
                     <div className='form-input'>
                     Image Url: <input type="text" className="form-control" onChange={handleNewImgurl} />
                     </div>
                     
-                    <button className='btn btn-primary submit-drop-form' data-bs-toggle="collapse" href={`#formSection`} type="submit">Submit Athlete</button>
+                    <button className='btn btn-danger submit-drop-form' data-bs-toggle="collapse" href={`#formSection`} type="submit">Submit Athlete</button>
                 </form>
             </section>
         </div>

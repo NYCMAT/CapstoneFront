@@ -44,7 +44,7 @@ const ShowCard = (props) => {
             <div className='col'>
                 <div className='collapse drop-form-div' id={`UpdateForm${props.showFighter.fighter_id}`}>
                     <Edit showFighter={props.showFighter} setFilteredResults={props.setFilteredResults} fighters={props.fighters} setFighters={props.setFighters} setShowFighter={props.setShowFighter}/>
-                    <button className='btn btn-primary mt-3' data-bs-toggle="collapse" onClick={ (event) => {props.handleDelete(props.showFighter)}}>Delete Athlete</button> 
+                    <button className='btn btn-warning' data-bs-toggle="collapse" onClick={ (event) => {props.handleDelete(props.showFighter)}}>Delete Athlete</button> 
                 </div>
             </div>
         </div>
